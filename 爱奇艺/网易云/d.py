@@ -1,7 +1,7 @@
 import  tkinter
 from selenium import webdriver
 import time
-# import pymysql
+import pymysql
 import requests
 class table():   #表
 
