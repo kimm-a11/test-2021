@@ -1,0 +1,21 @@
+pytest.ini
+# 命令行参数
+addopts = -v --reruns=1 --count=2
+
+# testpaths指定的路径是以testpaths所在的目录为基准的相对路径
+testpaths = test_case
+
+#更改测试用例收集规则
+
+python_files =  test_*.py  *_test.py
+
+
+#设置xfail_strict = True可以让那些标记为@pytest.mark.xfail但实际通过显示XPASS的测试用例被报告为失败
+xfail_strict = True
+
+requirements
+#生成requirements.txt文件
+pip freeze > requirements.txt
+
+#安装requirements.txt依赖
+pip install -r requirements.txt

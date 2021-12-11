@@ -1,0 +1,7 @@
+kyt:
+  - query=${query}&sregion=${sregion}
+  - {'query':trump,'sregion':'ie','locale':'en-ww','expect':[1,2]}
+
+kyt1:
+  - query=${query}&sregion=${seagion}
+  - {'query':trump,'sregion':'ie','locale':'en-ww','except':[1,2]}
