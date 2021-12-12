@@ -17,8 +17,10 @@ class TestSearch:
         with soft_assertions():
             search_1 = SearchDemo(driver)
             search_1.open_url(html)
+            # assert_that(1, "error").is_equal_to(2)
             search_1.input_text(search_1.input, "baidu")
             search_1.is_click(search_1.submit_btn)
             new_url = search_1.get_current_url()
-            assert_that(new_url, "error").is_not_equal_to(html)
-            logger.info('{0} {1}, {2}'.format(new_url, 'df', len(new_url)))
+            # assert_that(new_url, "error").is_not_equal_to(html)
+            assert_that(new_url, "error").is_equal_to(html)
+
