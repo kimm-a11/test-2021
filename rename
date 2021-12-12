@@ -19,3 +19,15 @@ pip freeze > requirements.txt
 
 #安装requirements.txt依赖
 pip install -r requirements.txt
+
+#git命令
+git config --global user.name "kimm-a11"
+git config --global user.email "2598614627@qq.com"
+
+
+#执行用例：
+pytest . --alluredir=./report/allure --clean-alluredir
+#生成报告：
+allure generate --clean ./report/allure
+#生成报告并自动打开：
+allure serve ./report/allure

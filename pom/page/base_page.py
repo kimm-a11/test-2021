@@ -15,6 +15,9 @@ ElementStat = {
 
 
 class BasePage:
+    input = (By.CSS_SELECTOR, '[id="kw"]')  # 输入框
+    submit_btn = (By.CSS_SELECTOR, '[type="submit"]')  # 提交按钮
+
     def __init__(self, driver):
         self._driver = driver
 
@@ -45,3 +48,7 @@ class BasePage:
         window.scrollTo(0,document.body.scrollHeight)
         """
         return self._driver.execute_script
+
+    def input_text(self, locator, text):
+        self.is_click(locator)
+        self.find_element(locator).send_keys(text)
