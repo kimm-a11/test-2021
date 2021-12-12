@@ -2,8 +2,6 @@ import pytest
 import os
 import allure
 from selenium import webdriver
-from _pytest import runner
-from allure_pytest.listener import AllureListener
 
 
 @pytest.fixture(scope="session")
