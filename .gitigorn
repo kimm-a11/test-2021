@@ -3,3 +3,6 @@
 
 
 /report/
+/allure-report/
+/.pytest_cache/
+/-c/
