@@ -8,6 +8,7 @@ from assertpy import assert_that, soft_assertions
 from common.base_config import html
 from common.logger import logger
 
+
 class TestSearch:
     @pytest.mark.demo
     @pytest.mark.parametrize('value,expect',
