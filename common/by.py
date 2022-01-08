@@ -13,3 +13,5 @@ class By(object):
     CSS_SELECTOR = "css selector"
     Visibility = "visibility_of_element_located"
     Presence = "presence_of_element_located"
+    Clickable = "element_to_be_clickable"
+

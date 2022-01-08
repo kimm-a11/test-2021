@@ -1,13 +1,16 @@
 import pytest
 from common.path import search_data
 
-from common.readyaml import ReadYaml
+
+class Test:
+    @pytest.mark.parametrize('para', 'para')
+    def test_video_test(self, para):
+        para = 3
 
 
-@pytest.mark.parametrize('value,expect', ReadYaml('filter_l.yaml', search_data)('kyt',default=True))
-def test_test(driver,value,expect):
-    print(ReadYaml('filter_l.yaml', search_data)('kyt',default=True))
-    str=[1,2,3,4,5,2,6]
-    str.pop(2)
-    print(str)
-    assert 1==2
+
+if "__main__ " == __name__:
+    b = 'a'
+    print(")))))))))))")
+    m = Test().test_video_test(b)
+    print(m)

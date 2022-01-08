@@ -1,7 +1,14 @@
 pytest.ini
 # 命令行参数
 addopts = -v --reruns=1 --count=2
-
+-s:表示输出调试信息，包括print打印的信息
+-v显示更详细的信息
+-vs一起使用
+-n支持多线程或者分布式运行测试用例
+#reruns==number 表示失败用例重跑
+#-x表示只要一个用例报错，那么测试停止运行
+#–maxfail=2 出现两个失败用例停止
+#-k 根据测试用例的部分字符串指定测试用例 pytest -vs test_day2 -k “yang”
 # testpaths指定的路径是以testpaths所在的目录为基准的相对路径
 testpaths = test_case
 

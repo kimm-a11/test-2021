@@ -4,7 +4,6 @@ import os
 
 # 框架原本的位置路径
 curl_path = dirname(dirname(realpath(__file__)))
-
 # common 路径
 common = os.path.join(curl_path, 'common')
 
@@ -22,4 +21,8 @@ chromedriver = os.path.join(curl_path, 'driver')
 # config存放的位置
 
 config = os.path.join(curl_path, 'config')
+
+# log存放的位置
+
+log = os.path.join(curl_path, 'log')
 

@@ -1,2 +1,4 @@
 # 链接
-html: 'https://www.baidu.com/'
+html: 'https://shuliecloud.com/login'
+# 超时
+Timeout : 2

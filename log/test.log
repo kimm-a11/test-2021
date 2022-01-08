@@ -1,0 +1,2 @@
+2021-12-25 23:48:42.743 | DEBUG    | pom.page.base_page:find_element:39 - ±®¥Ì¿≤(<class 'selenium.common.exceptions.TimeoutException'>, TimeoutException('', None, None), <traceback object at 0x041A0F08>)
+2021-12-26 00:43:21.271 | INFO     | pom.page.base_page:find_element:39 - ±®¥Ì¿≤(<class 'selenium.common.exceptions.TimeoutException'>, TimeoutException('', None, None), <traceback object at 0x04D08188>)

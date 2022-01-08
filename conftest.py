@@ -21,6 +21,16 @@ def driver(request):
     return drivers
 
 
+def pytest_collection_modifyitems(items):
+    """
+    测试用例收集完成时，将收集到的item的name和nodeid的中文显示在控制台上
+    :return:
+    """
+    for item in items:
+        item.name = item.name.encode("utf-8").decode("unicode_escape")
+        item._nodeid = item.nodeid.encode("utf-8").decode("unicode_escape")
+
+
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
 def pytest_runtest_makereport(item,call):
     """
@@ -33,12 +43,17 @@ def pytest_runtest_makereport(item,call):
     outcome = yield
     rep = outcome.get_result()
     if rep.when == "call" and rep.failed:
-        mode = "a" if os.path.exists("failures") else "w"
-        with open("failures", mode) as f:
-            if "tmpdir" in item.fixturenames:
-                extra = " (%s)" % item.funcargs["tmpdir"]
-            else:
-                extra = ""
-            f.write(rep.nodeid + extra + "\n")
+        # mode = "a" if os.path.exists("failures") else "w"
+        # with open("failures", mode) as f:
+        #     if "tmpdir" in item.fixturenames:
+        #         extra = " (%s)" % item.funcargs["tmpdir"]
+        #     else:
+        #         extra = ""
+        #     f.write(rep.nodeid + extra + "\n")
         with allure.step('添加失败截图...'):
             allure.attach(drivers.get_screenshot_as_png(), "失败截图", allure.attachment_type.PNG)
+
+# @pytest.fixture
+# def amdont(self):
+
+
