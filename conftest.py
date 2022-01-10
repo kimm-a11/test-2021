@@ -6,8 +6,8 @@ from selenium import webdriver
 
 @pytest.fixture(scope="session")
 def driver(request):
-    global drivers
     option = webdriver.ChromeOptions()
+    global drivers
     drivers = webdriver.Chrome(options=option)
 
     # driver.get(

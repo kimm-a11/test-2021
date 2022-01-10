@@ -3,6 +3,7 @@ from common.path import search_data
 import os
 import string
 
+
 class ReadConfigYaml:
     def __init__(self, name: str, path):
         yaml1 = os.path.join(path, name)

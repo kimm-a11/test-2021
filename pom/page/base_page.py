@@ -8,6 +8,7 @@ from common.loger import logger
 from common.base_config import Timeout
 import traceback
 import sys
+from selenium.webdriver.support.color import Color
 ElementStat = {
     'By.Visibility': ec.visibility_of_element_located,
     'By.Presence': ec.presence_of_element_located,
@@ -20,7 +21,7 @@ ElementStat = {
 
 class BasePage:
     input = (By.CSS_SELECTOR, '[id="kw"]')  # 输入框
-    submit_btn = (By.CSS_SELECTOR, '[type="submit1"]')  # 提交按钮
+    submit_btn = (By.CSS_SELECTOR, '[type="submit"]')  # 提交按钮
     all_page = (By.CSS_SELECTOR, '[class="cur-tab"]')  # all页面
 
     def __init__(self, driver):
@@ -70,10 +71,10 @@ class BasePage:
     def get_element_text(self, locator):
         return [item.tetx for item in self.find_elements(locator)]
 
-    def get_css_value(self, locator, name):
+    def get_attribute_value(self, locator, name):
         return self.find_element(locator).get_attribute(name)
 
-    def get_css_values(self, locator, name):
+    def get_attribute_values(self, locator, name):
         return [item.get_attribute(name) for item in self.find_elements(locator)]
 
     def judge_jump_url(self, url, default=True, timeout=Timeout):
@@ -88,3 +89,12 @@ class BasePage:
             if default:
                 return self.get_current_url() != url
             return url in self.get_current_url()
+
+    def get_css_property(self):
+        return self.find_element(locator).value_of_css_property(name)
+
+    def get_css_propertys(self, locator, name):
+        return [item.value_of_css_property(name) for item in self.find_elements(locator)]
+
+    def string_to_hex(self,data):
+        return Color.from_string(data).hex
